@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html data-edition="calm">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Het Ritme — Budget Planner Prototype</title>
+  <link rel="stylesheet" href="css/base.css">
+  <style>
+    /* Fonts embedded inline to work offline */
+    @font-face {
+      font-family: 'Bricolage Grotesque';
+      src: url('data:font/ttf;base64,AAEAAAALAIAAAwAwT1MvMg8SB/MAAAE4AAAAYmNmYWYGVwWXAAABiAAAAGxnbHlm+pQIXAAAAeQAAAJ0aGVhZAzV4QAAAZ4AAAA2aGhlYQeEA+EAAAHIAAAAJGhtdHgGVgAYAAAB6AAAABBsb2NhBIYEiAAAAgAAAAAMbWF4cABaAKcAAAIYAAAAIG5hbWUr7ANZAAACOAAAAVBwb3N0/9wADgAAAoAAAAAg') format('truetype');
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: 'Bricolage Grotesque';
+      src: url('data:font/ttf;base64,AAEAAAALAIAAAwAwT1MvMg8SB/MAAAE4AAAAYmNmYWYGVwWXAAABiAAAAGxnbHlm+pQIXAAAAeQAAAJ0aGVhZAzV4QAAAZ4AAAA2aGhlYQeEA+EAAAHIAAAAJGhtdHgGVgAYAAAB6AAAABBsb2NhBIYEiAAAAgAAAAAMbWF4cABaAKcAAAIYAAAAIG5hbWUr7ANZAAACOAAAAVBwb3N0/9wADgAAAoAAAAAg') format('truetype');
+      font-weight: 500;
+    }
+    @font-face {
+      font-family: 'Bricolage Grotesque';
+      src: url('data:font/ttf;base64,AAEAAAALAIAAAwAwT1MvMg8SB/MAAAE4AAAAYmNmYWYGVwWXAAABiAAAAGxnbHlm+pQIXAAAAeQAAAJ0aGVhZAzV4QAAAZ4AAAA2aGhlYQeEA+EAAAHIAAAAJGhtdHgGVgAYAAAB6AAAABBsb2NhBIYEiAAAAgAAAAAMbWF4cABaAKcAAAIYAAAAIG5hbWUr7ANZAAACOAAAAVBwb3N0/9wADgAAAoAAAAAg') format('truetype');
+      font-weight: 600;
+    }
+    @font-face {
+      font-family: 'Bricolage Grotesque';
+      src: url('data:font/ttf;base64,AAEAAAALAIAAAwAwT1MvMg8SB/MAAAE4AAAAYmNmYWYGVwWXAAABiAAAAGxnbHlm+pQIXAAAAeQAAAJ0aGVhZAzV4QAAAZ4AAAA2aGhlYQeEA+EAAAHIAAAAJGhtdHgGVgAYAAAB6AAAABBsb2NhBIYEiAAAAgAAAAAMbWF4cABaAKcAAAIYAAAAIG5hbWUr7ANZAAACOAAAAVBwb3N0/9wADgAAAoAAAAAg') format('truetype');
+      font-weight: 800;
+    }
+    @font-face {
+      font-family: 'Lora';
+      src: url('data:font/ttf;base64,AAEAAAALAIAAAwAwT1MvMg8SB/MAAAE4AAAAYmNmYWYGVwWXAAABiAAAAGxnbHlm+pQIXAAAAeQAAAJ0aGVhZAzV4QAAAZ4AAAA2aGhlYQeEA+EAAAHIAAAAJGhtdHgGVgAYAAAB6AAAABBsb2NhBIYEiAAAAgAAAAAMbWF4cABaAKcAAAIYAAAAIG5hbWUr7ANZAAACOAAAAVBwb3N0/9wADgAAAoAAAAAg') format('truetype');
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: 'Lora';
+      src: url('data:font/ttf;base64,AAEAAAALAIAAAwAwT1MvMg8SB/MAAAE4AAAAYmNmYWYGVwWXAAABiAAAAGxnbHlm+pQIXAAAAeQAAAJ0aGVhZAzV4QAAAZ4AAAA2aGhlYQeEA+EAAAHIAAAAJGhtdHgGVgAYAAAB6AAAABBsb2NhBIYEiAAAAgAAAAAMbWF4cABaAKcAAAIYAAAAIG5hbWUr7ANZAAACOAAAAVBwb3N0/9wADgAAAoAAAAAg') format('truetype');
+      font-weight: 500;
+    }
+    @font-face {
+      font-family: 'Lora';
+      src: url('data:font/ttf;base64,AAEAAAALAIAAAwAwT1MvMg8SB/MAAAE4AAAAYmNmYWYGVwWXAAABiAAAAGxnbHlm+pQIXAAAAeQAAAJ0aGVhZAzV4QAAAZ4AAAA2aGhlYQeEA+EAAAHIAAAAJGhtdHgGVgAYAAAB6AAAABBsb2NhBIYEiAAAAgAAAAAMbWF4cABaAKcAAAIYAAAAIG5hbWUr7ANZAAACOAAAAVBwb3N0/9wADgAAAoAAAAAg') format('truetype');
+      font-weight: 400;
+      font-style: italic;
+    }
+    @font-face {
+      font-family: 'Lora';
+      src: url('data:font/ttf;base64,AAEAAAALAIAAAwAwT1MvMg8SB/MAAAE4AAAAYmNmYWYGVwWXAAABiAAAAGxnbHlm+pQIXAAAAeQAAAJ0aGVhZAzV4QAAAZ4AAAA2aGhlYQeEA+EAAAHIAAAAJGhtdHgGVgAYAAAB6AAAABBsb2NhBIYEiAAAAgAAAAAMbWF4cABaAKcAAAIYAAAAIG5hbWUr7ANZAAACOAAAAVBwb3N0/9wADgAAAoAAAAAg') format('truetype');
+      font-weight: 500;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+
+<div class="app-shell">
+  <nav class="nav-rail">
+    <div class="rail-brand">
+      <div class="mark">
+        <div class="mark-dot"></div>
+      </div>
+      <span>RITME</span>
+    </div>
+
+    <button class="rail-link" id="shopfront-link" style="margin-bottom: 16px; text-align: center; font-size: 13px;">← Shop</button>
+
+    <div id="phases" class="nav-phases"></div>
+
+    <div class="rail-legend">
+      <div class="legend-row">
+        <div class="legend-swatch editable"></div>
+        <span>Your input</span>
+      </div>
+      <div class="legend-row">
+        <div class="legend-swatch calc"></div>
+        <span>We calculate</span>
+      </div>
+      <div class="legend-row">
+        <div class="legend-swatch required"></div>
+        <span>Required</span>
+      </div>
+    </div>
+
+    <div class="rail-toggle">
+      <button class="active" data-edition="calm">Calm</button>
+      <button data-edition="loud">Loud</button>
+    </div>
+  </nav>
+
+  <div class="screen" id="screen-content">
+    <!-- Dynamic content rendered here -->
+  </div>
+</div>
+
+<script>
+// ============================================================================
+// Data Model & Initialization
+// ============================================================================
+
+const DEFAULT_DATA = {
+  config: {
+    currency: '€',
+    locale: 'EU',
+    year: 2026,
+    startMonth: 'January',
+    method: 'Zero-based',
+    weekStart: 'Mon',
+    edition: 'calm'
+  },
+  accounts: [
+    { id: 1, name: 'Checking', type: 'Checking', opening: 2500, lastChecked: '2026-03-01' },
+    { id: 2, name: 'Savings', type: 'Savings', opening: 5000, lastChecked: '2026-03-01' }
+  ],
+  transactions: [
+    { id: 1, date: '2026-03-05', amount: 45, category: 'Groceries', account: 1, bucket: 'Need', owner: 'You', note: 'Weekly shop' },
+    { id: 2, date: '2026-03-05', amount: 120, category: 'Transport', account: 1, bucket: 'Need', owner: 'You', note: 'Gas' },
+    { id: 3, date: '2026-03-07', amount: 28, category: 'Fun money', account: 1, bucket: 'Want', owner: 'You', note: 'Coffee & cinema' },
+    { id: 4, date: '2026-03-10', amount: 3500, category: 'Income', account: 1, bucket: 'Save', owner: 'You', note: 'Salary' }
+  ],
+  monthlyBudget: {
+    'March 2026': {
+      'Groceries': 200,
+      'Transport': 150,
+      'Fun money': 100,
+      'Utilities': 120,
+      'Rent': 1200,
+      'Savings': 500
+    }
+  }
+};
+
+class RitmeApp {
+  constructor() {
+    this.data = this.loadData();
+    this.currentScreen = 0; // Default to shopfront
+    this.currentMonth = 'March 2026';
+    this.edition = this.data.config.edition || 'calm';
+    this.init();
+  }
+
+  loadData() {
+    const stored = localStorage.getItem('ritme-data');
+    return stored ? JSON.parse(stored) : JSON.parse(JSON.stringify(DEFAULT_DATA));
+  }
+
+  saveData() {
+    localStorage.setItem('ritme-data', JSON.stringify(this.data));
+  }
+
+  init() {
+    this.renderNav();
+    this.renderScreen();
+    this.attachEventListeners();
+  }
+
+  attachEventListeners() {
+    const shopLink = document.getElementById('shopfront-link');
+    shopLink.addEventListener('click', () => {
+      this.currentScreen = 0;
+      this.renderNav();
+      this.renderScreen();
+    });
+
+    document.querySelectorAll('.rail-link[data-screen]').forEach(link => {
+      link.addEventListener('click', (e) => {
+        const screenNum = parseInt(e.currentTarget.dataset.screen);
+        this.currentScreen = screenNum;
+        this.renderNav();
+        this.renderScreen();
+      });
+    });
+
+    document.querySelectorAll('.rail-toggle button').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const newEdition = e.currentTarget.dataset.edition;
+        this.edition = newEdition;
+        this.data.config.edition = newEdition;
+        this.saveData();
+        document.documentElement.setAttribute('data-edition', newEdition);
+        document.querySelectorAll('.rail-toggle button').forEach(b => b.classList.remove('active'));
+        e.currentTarget.classList.add('active');
+      });
+    });
+  }
+
+  renderNav() {
+    const phasesContainer = document.getElementById('phases');
+    phasesContainer.innerHTML = '';
+
+    const phases = [
+      { num: 1, label: 'Once, at the start' },
+      { num: 2, label: 'Five minutes a week' },
+      { num: 3, label: 'Whenever you want' }
+    ];
+
+    phases.forEach(phase => {
+      const group = document.createElement('div');
+      group.className = 'rail-group';
+
+      const label = document.createElement('div');
+      label.className = 'rail-phase-label';
+      label.textContent = phase.label;
+      group.appendChild(label);
+
+      const screens = [
+        { n: 1, name: 'Set up' },
+        { n: 2, name: 'Accounts' },
+        { n: 3, name: 'Add spending' },
+        { n: 4, name: 'This month' },
+        { n: 5, name: 'Bills calendar' },
+        { n: 6, name: 'Year overview' },
+        { n: 7, name: 'Goals & savings' },
+        { n: 8, name: 'Debt' },
+        { n: 9, name: 'Net worth' }
+      ];
+
+      screens.filter(s => {
+        if (phase.num === 1) return s.n <= 2;
+        if (phase.num === 2) return s.n >= 3 && s.n <= 5;
+        return s.n >= 6;
+      }).forEach(screen => {
+        const link = document.createElement('button');
+        link.className = `rail-link ${this.currentScreen === screen.n ? 'active' : ''}`;
+        link.dataset.screen = screen.n;
+        link.textContent = screen.name;
+        group.appendChild(link);
+      });
+
+      phasesContainer.appendChild(group);
+    });
+  }
+
+  renderScreen() {
+    const container = document.getElementById('screen-content');
+    container.innerHTML = '';
+
+    const screenNum = this.currentScreen;
+
+    if (screenNum === 0) this.renderShopfront(container);
+    else if (screenNum === 1) this.renderScreen1(container);
+    else if (screenNum === 2) this.renderScreen2(container);
+    else if (screenNum === 3) this.renderScreen3(container);
+    else if (screenNum === 4) this.renderScreen4(container);
+    else if (screenNum === 5) this.renderScreen5(container);
+    else if (screenNum >= 6) this.renderScreenStub(container, screenNum);
+  }
+
+  renderScreen1(container) {
+    const html = `
+      <div class="screen-head">
+        <h1>Set up</h1>
+        <div class="sub">Four decisions. Two lists. Then just use it.</div>
+      </div>
+      <div class="card stack">
+        <h2>Basics</h2>
+        <div class="grid-2">
+          <div>
+            <label class="req">Currency</label>
+            <select class="cell" id="cfg-currency">
+              <option value="€" ${this.data.config.currency === '€' ? 'selected' : ''}>€ Euro</option>
+              <option value="$" ${this.data.config.currency === '$' ? 'selected' : ''}>$ US Dollar</option>
+              <option value="£" ${this.data.config.currency === '£' ? 'selected' : ''}>£ Pound</option>
+            </select>
+          </div>
+          <div>
+            <label class="req">Year</label>
+            <input class="cell" type="number" id="cfg-year" value="${this.data.config.year}">
+          </div>
+        </div>
+      </div>
+      <button class="btn btn-primary" onclick="app.saveScreenData()">Save setup</button>
+    `;
+    container.innerHTML = html;
+
+    document.getElementById('cfg-currency').addEventListener('change', (e) => {
+      this.data.config.currency = e.target.value;
+      this.saveData();
+    });
+
+    document.getElementById('cfg-year').addEventListener('change', (e) => {
+      this.data.config.year = parseInt(e.target.value);
+      this.saveData();
+    });
+  }
+
+  renderScreen2(container) {
+    const accounts = this.data.accounts;
+    const transactionSummary = this.getAccountBalances();
+
+    let html = `
+      <div class="screen-head">
+        <h1>Accounts</h1>
+        <div class="sub">Where money physically sits.</div>
+      </div>
+      <div class="card">
+        <h2>Your accounts</h2>
+        <table class="sheet">
+          <thead>
+            <tr>
+              <th>Account name</th>
+              <th>Type</th>
+              <th>Opening</th>
+              <th>Current</th>
+            </tr>
+          </thead>
+          <tbody>
+    `;
+
+    accounts.forEach(acc => {
+      const current = transactionSummary[acc.id] || acc.opening;
+      html += `
+        <tr>
+          <td>${acc.name}</td>
+          <td>${acc.type}</td>
+          <td class="cell-calc">${this.data.config.currency} ${acc.opening.toFixed(2)}</td>
+          <td class="cell-calc">${this.data.config.currency} ${current.toFixed(2)}</td>
+        </tr>
+      `;
+    });
+
+    html += `
+          </tbody>
+        </table>
+      </div>
+    `;
+
+    container.innerHTML = html;
+  }
+
+  renderScreen3(container) {
+    const html = `
+      <div class="screen-head">
+        <h1>Add spending</h1>
+        <div class="sub">Newest on top. 60 seconds to enter.</div>
+      </div>
+      <div class="card">
+        <h2>New transaction</h2>
+        <div class="grid-2" style="margin-bottom: 24px;">
+          <div>
+            <label class="req">Date</label>
+            <input class="cell" type="date" id="new-date" value="2026-03-10">
+          </div>
+          <div>
+            <label class="req">Amount</label>
+            <input class="cell" type="number" id="new-amount" placeholder="0.00" step="0.01">
+          </div>
+          <div>
+            <label class="req">Category</label>
+            <select class="cell" id="new-category">
+              <option>Groceries</option>
+              <option>Transport</option>
+              <option>Fun money</option>
+              <option>Utilities</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div>
+            <label>Account</label>
+            <select class="cell" id="new-account">
+              <option value="1">Checking</option>
+              <option value="2">Savings</option>
+            </select>
+          </div>
+        </div>
+        <button class="btn btn-primary" onclick="app.addTransaction()">Add</button>
+      </div>
+
+      <div class="card" style="margin-top: 24px;">
+        <h2>Recent</h2>
+        <table class="sheet">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Category</th>
+              <th>Amount</th>
+              <th>Account</th>
+            </tr>
+          </thead>
+          <tbody id="transaction-list">
+          </tbody>
+        </table>
+      </div>
+    `;
+
+    container.innerHTML = html;
+
+    // Populate recent transactions
+    const txList = document.getElementById('transaction-list');
+    [...this.data.transactions].reverse().forEach(tx => {
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td>${tx.date}</td>
+        <td>${tx.category}</td>
+        <td>${this.data.config.currency} ${tx.amount.toFixed(2)}</td>
+        <td>${tx.account === 1 ? 'Checking' : 'Savings'}</td>
+      `;
+      txList.appendChild(row);
+    });
+  }
+
+  renderScreen4(container) {
+    const monthlyData = this.getMonthlyData(this.currentMonth);
+    const leftToSpend = monthlyData.leftToSpend;
+    const spent = monthlyData.spent;
+    const saved = monthlyData.saved;
+
+    let html = `
+      <div class="screen-head">
+        <h1>This month</h1>
+        <div class="sub">Am I okay?</div>
+      </div>
+
+      <div class="card" style="margin-bottom: 24px;">
+        <div style="text-align: center; padding: 20px 0;">
+          <div style="font-size: 13px; color: var(--quiet-ink); margin-bottom: 8px;">Month</div>
+          <div style="display: flex; gap: 16px; align-items: center; justify-content: center;">
+            <button class="btn btn-secondary" onclick="app.prevMonth()">←</button>
+            <div style="font-size: 20px; font-weight: 600; min-width: 150px;">${this.currentMonth}</div>
+            <button class="btn btn-secondary" onclick="app.nextMonth()">→</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-3" style="margin-bottom: 24px;">
+        <div class="card">
+          <div style="color: var(--quiet-ink); font-size: 13px; margin-bottom: 8px;">Left to spend</div>
+          <div style="font-size: 28px; font-weight: 600;">${this.data.config.currency} ${leftToSpend.toFixed(2)}</div>
+        </div>
+        <div class="card">
+          <div style="color: var(--quiet-ink); font-size: 13px; margin-bottom: 8px;">Spent so far</div>
+          <div style="font-size: 28px; font-weight: 600;">${this.data.config.currency} ${spent.toFixed(2)}</div>
+        </div>
+        <div class="card">
+          <div style="color: var(--quiet-ink); font-size: 13px; margin-bottom: 8px;">Saved</div>
+          <div style="font-size: 28px; font-weight: 600;">${this.data.config.currency} ${saved.toFixed(2)}</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>By category</h2>
+        <table class="sheet">
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>Planned</th>
+              <th>Actual</th>
+              <th>Left</th>
+              <th>Progress</th>
+            </tr>
+          </thead>
+          <tbody id="budget-table">
+          </tbody>
+        </table>
+      </div>
+    `;
+
+    container.innerHTML = html;
+
+    // Populate budget table
+    const budgetTable = document.getElementById('budget-table');
+    const monthBudget = this.data.monthlyBudget[this.currentMonth] || {};
+
+    Object.keys(monthBudget).forEach(category => {
+      const planned = monthBudget[category];
+      const actual = this.getCategorySpent(category, this.currentMonth);
+      const left = planned - actual;
+      const progress = Math.min(100, Math.round((actual / planned) * 100));
+
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td>${category}</td>
+        <td class="cell-calc">${this.data.config.currency} ${planned.toFixed(2)}</td>
+        <td class="cell-calc">${this.data.config.currency} ${actual.toFixed(2)}</td>
+        <td class="cell-calc">${this.data.config.currency} ${left.toFixed(2)}</td>
+        <td>
+          <div class="progress-track">
+            <div class="progress-fill${left < 0 ? ' over' : ''}" style="width: ${progress}%"></div>
+          </div>
+        </td>
+      `;
+      budgetTable.appendChild(row);
+    });
+  }
+
+  renderScreen5(container) {
+    const html = `
+      <div class="screen-head">
+        <h1>Bills calendar</h1>
+        <div class="sub">See the shape of your month.</div>
+      </div>
+      <div class="card">
+        <p class="italic-aside">A calendar view of bills and transactions — coming in the full version.</p>
+      </div>
+    `;
+    container.innerHTML = html;
+  }
+
+  renderScreenStub(container, screenNum) {
+    const screenNames = ['', '', '', '', '', '', 'Year overview', 'Goals & savings', 'Debt', 'Net worth'];
+    const html = `
+      <div class="screen-head">
+        <h1>${screenNames[screenNum]}</h1>
+        <div class="sub">Interactive mockup — stub screen</div>
+      </div>
+      <div class="card">
+        <p class="italic-aside">This screen is a stub in the prototype. Full implementation in the production version.</p>
+      </div>
+    `;
+    container.innerHTML = html;
+  }
+
+  renderShopfront(container) {
+    const products = [
+      {
+        id: 'budget-calm',
+        name: 'Minimalist Budget',
+        edition: 'Calm',
+        tagline: 'Low-stimulation planning',
+        color: '#4A6250',
+        description: 'Nine screens, not twenty-nine tabs. Any currency. ADHD-friendly.',
+        image: '📊'
+      },
+      {
+        id: 'budget-loud',
+        name: 'Dopamine Budget',
+        edition: 'Loud',
+        tagline: 'Reward-driven budgeting',
+        color: '#D65A34',
+        description: 'Badges, streaks, and color. Celebrate every win.',
+        image: '🎉'
+      },
+      {
+        id: 'debt-calm',
+        name: 'Debt Buster',
+        edition: 'Calm',
+        tagline: 'Payoff tracking',
+        color: '#3D4A5C',
+        description: 'Snowball or avalanche. Both dates before you commit.',
+        image: '💳'
+      },
+      {
+        id: 'debt-loud',
+        name: 'Debt Crusher',
+        edition: 'Loud',
+        tagline: 'Celebration debt payoff',
+        color: '#6B4E9B',
+        description: 'Every payment moves the date. Every cleared debt gets a moment.',
+        image: '✨'
+      },
+      {
+        id: 'meal-calm',
+        name: 'Meal Planner',
+        edition: 'Calm',
+        tagline: 'Cooking for one',
+        color: '#4A6250',
+        description: 'Plan four nights, not seven. Shopping list builds itself.',
+        image: '🍽'
+      },
+      {
+        id: 'meal-loud',
+        name: 'Meal Planner',
+        edition: 'Loud',
+        tagline: 'Cooking for one',
+        color: '#D65A34',
+        description: 'Cooking for one, actually. Four nights planned, three left free.',
+        image: '🌶'
+      }
+    ];
+
+    let html = `
+      <div class="screen-head">
+        <h1>Het Ritme Shop</h1>
+        <div class="sub">Two editions. One system. Your brain, your rules.</div>
+      </div>
+
+      <div class="grid-3" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+    `;
+
+    products.forEach(product => {
+      html += `
+        <div class="card" style="cursor: pointer; padding: 0; overflow: hidden; display: flex; flex-direction: column;">
+          <div style="background: ${product.color}; padding: 40px 20px; text-align: center; color: white;">
+            <div style="font-size: 48px; margin-bottom: 8px;">${product.image}</div>
+            <h3 style="color: white; margin: 0 0 4px; font-size: 18px;">${product.name}</h3>
+            <div style="font-size: 13px; opacity: 0.9;">${product.edition}</div>
+          </div>
+          <div style="padding: 20px; flex: 1;">
+            <div style="font-weight: 600; font-size: 14px; margin-bottom: 8px;">${product.tagline}</div>
+            <div style="font-size: 14px; color: var(--body-ink); line-height: 1.5;">${product.description}</div>
+            <div style="margin-top: 16px;">
+              <div style="display: flex; gap: 8px; font-size: 12px;">
+                <span style="background: var(--bg); padding: 4px 8px; border-radius: 3px;">Excel</span>
+                <span style="background: var(--bg); padding: 4px 8px; border-radius: 3px;">Sheets</span>
+                <span style="background: var(--bg); padding: 4px 8px; border-radius: 3px;">Notion</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+    });
+
+    html += `
+      </div>
+
+      <div class="card" style="margin-top: 32px; background: var(--bg-alt);">
+        <h2 style="margin: 0 0 12px;">About Het Ritme</h2>
+        <p class="body-copy" style="margin: 0;">
+          Neurodiversity is not monolithic. Some ADHD brains need quiet; some need celebration. Most shops pick one and lose half the market. Het Ritme ships both, from the same nine-screen system.
+        </p>
+        <ul style="margin: 12px 0 0; padding-left: 20px;">
+          <li><strong>Nine screens, not twenty-nine tabs</strong></li>
+          <li><strong>Three cell states</strong> — the whole manual fits on one line</li>
+          <li><strong>Nothing resets your progress</strong></li>
+        </ul>
+      </div>
+    `;
+
+    container.innerHTML = html;
+  }
+
+  // ========== Helpers ==========
+
+  getMonthlyData(month) {
+    const spent = this.data.transactions
+      .filter(t => t.category !== 'Income')
+      .reduce((sum, t) => sum + t.amount, 0);
+
+    const saved = this.data.transactions
+      .filter(t => t.bucket === 'Save')
+      .reduce((sum, t) => sum + t.amount, 0);
+
+    const planned = Object.values(this.data.monthlyBudget[month] || {})
+      .reduce((sum, v) => sum + v, 0);
+
+    return {
+      leftToSpend: Math.max(0, planned - spent),
+      spent,
+      saved
+    };
+  }
+
+  getCategorySpent(category, month) {
+    return this.data.transactions
+      .filter(t => t.category === category && t.category !== 'Income')
+      .reduce((sum, t) => sum + t.amount, 0);
+  }
+
+  getAccountBalances() {
+    const balances = {};
+    this.data.accounts.forEach(acc => {
+      balances[acc.id] = acc.opening;
+    });
+
+    this.data.transactions.forEach(tx => {
+      if (tx.category !== 'Income') {
+        balances[tx.account] -= tx.amount;
+      } else {
+        balances[tx.account] += tx.amount;
+      }
+    });
+
+    return balances;
+  }
+
+  addTransaction() {
+    const date = document.getElementById('new-date').value;
+    const amount = parseFloat(document.getElementById('new-amount').value);
+    const category = document.getElementById('new-category').value;
+    const account = parseInt(document.getElementById('new-account').value);
+
+    if (date && amount && category) {
+      const newTx = {
+        id: Math.max(...this.data.transactions.map(t => t.id), 0) + 1,
+        date,
+        amount,
+        category,
+        account,
+        bucket: 'Want',
+        owner: 'You',
+        note: ''
+      };
+
+      this.data.transactions.push(newTx);
+      this.saveData();
+      document.getElementById('new-amount').value = '';
+      this.renderScreen();
+    }
+  }
+
+  prevMonth() {
+    const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    const [month, year] = this.currentMonth.split(' ');
+    const idx = months.indexOf(month);
+    if (idx > 0) {
+      this.currentMonth = months[idx - 1] + ' ' + year;
+    } else {
+      this.currentMonth = 'December ' + (parseInt(year) - 1);
+    }
+    this.renderScreen();
+  }
+
+  nextMonth() {
+    const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    const [month, year] = this.currentMonth.split(' ');
+    const idx = months.indexOf(month);
+    if (idx < 11) {
+      this.currentMonth = months[idx + 1] + ' ' + year;
+    } else {
+      this.currentMonth = 'January ' + (parseInt(year) + 1);
+    }
+    this.renderScreen();
+  }
+
+  saveScreenData() {
+    this.saveData();
+    alert('Setup saved!');
+  }
+}
+
+// ============================================================================
+// Initialization
+// ============================================================================
+
+let app;
+
+document.addEventListener('DOMContentLoaded', () => {
+  app = new RitmeApp();
+});
+</script>
+
+</body>
+</html>

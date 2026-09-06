@@ -1,0 +1,109 @@
+{
+  "_comment": "Single source of truth for Het Ritme visual + copy tokens. Read BRAND.md, DESIGN-SYSTEM.md, PLANNER-SPEC-BUDGET.md in project/design_handoff_ritme_planners/ for full context — this file is the extracted, machine-usable subset. Every tool that renders Calm/Loud UI (brand svgs, prototype, xlsx builder, PDFs) should read from here rather than re-typing hex values.",
+  "brand": {
+    "name": "Het Ritme",
+    "wordmarkFull": "HET RITME",
+    "wordmarkCompact": "RITME",
+    "tagline": "Planning is a rhythm, not a rule.",
+    "shortTagline": "Two editions. One system. Your brain, your rules.",
+    "etsyBio": "ADHD-designed budget & life planners for Excel, Sheets, Numbers and Notion — in low-stimulation Calm or high-colour Loud.",
+    "productPromise": "Same logic, same numbers, two ways to feel about them.",
+    "fontDisplay": "'Bricolage Grotesque', sans-serif",
+    "fontBody": "Lora, serif",
+    "fontFallback": "Arial, sans-serif"
+  },
+  "ink": "#262119",
+  "paper": "#F6F2E9",
+  "editions": {
+    "calm": {
+      "label": "the calm edition",
+      "accent": "#4A6250",
+      "accentAlternates": { "navy": "#3D4A5C", "terracotta": "#B4694E", "charcoal": "#3A3A38" },
+      "canvas": "#CFC7BA",
+      "bg": "#EDE8DE",
+      "bgAlt": "#E4DFD3",
+      "card": "#F6F2E9",
+      "cellWhite": "#FFFFFF",
+      "rule": "#DCD5C6",
+      "quietInk": "#8A8474",
+      "bodyInk": "#4E4740",
+      "ink": "#262119",
+      "calculatedFill": "#E4DFD3",
+      "calculatedBorder": "#DCD5C6",
+      "overLimit": "#8A8474",
+      "displayWeight": 600,
+      "displayLetterSpacing": "-.035em",
+      "displayLineHeight": "0.96",
+      "cornerRadius": 0,
+      "screenPadding": "58px",
+      "cardPadding": "30-34px"
+    },
+    "loud": {
+      "label": "the loud edition",
+      "accent": "#D65A34",
+      "cream": "#F6E8D2",
+      "cardCream": "#FFFBF2",
+      "track": "#F3E4CC",
+      "ink": "#262119",
+      "bodyInk": "#574A38",
+      "coral": "#D65A34",
+      "teal": "#2E7D74",
+      "gold": "#E8B23C",
+      "grape": "#6B4E9B",
+      "lime": "#5F8C33",
+      "calculatedFill": "#F3ECE0",
+      "calculatedBorder": "#DCCDB6",
+      "colorJobs": { "spend": "coral", "save": "teal", "reward": "gold", "debt": "grape", "income": "lime" },
+      "displayWeight": 800,
+      "displayLetterSpacing": "-.04em",
+      "displayLineHeight": "0.95",
+      "cornerRadiusCard": "18-22px",
+      "cornerRadiusButton": "999px",
+      "screenPadding": "58px"
+    }
+  },
+  "typeScale": {
+    "calm": { "display": [56, 62], "sectionHead": [30, 34], "lead": 21, "body": 18, "caption": 17, "figure": 16 },
+    "loud": { "display": [60, 66], "sectionHead": 30, "lead": 21, "body": 17.5, "figure": 16 }
+  },
+  "mark": {
+    "name": "Focus Ring",
+    "ringStrokeRatio": 0.1,
+    "dotDiameterRatio": 0.25,
+    "ringColor": "#262119",
+    "dotColorCalm": "#4A6250",
+    "dotColorLoud": "#D65A34",
+    "lockupGapRatio": 0.45,
+    "reversedColor": "#F6F2E9",
+    "belowPx": { "20": "mark alone, no wordmark", "40": "compact RITME wordmark, not full two-word" }
+  },
+  "cellLanguage": {
+    "editable": { "calm": "white fill, 1px ink border", "loud": "white fill, 2px teal border, radius 10" },
+    "calculated": { "calm": "#E4DFD3 fill, #DCD5C6 border, quiet ink text", "loud": "#F3ECE0 fill, 2px dashed #DCCDB6" },
+    "required": { "calm": "header label with trailing ' *'", "loud": "same, or coral pill" }
+  },
+  "config": {
+    "CFG_CURRENCY_OPTIONS": ["€", "$", "£", "R", "¥", "₹", "₪", "kr", "zł", "₱", "R$", "A$", "C$", "CHF", "₩", "฿", "RM", "₫", "None (blank)"],
+    "CFG_LOCALE_OPTIONS": ["EU", "US"],
+    "CFG_METHOD_OPTIONS": ["Zero-based", "Carry-over"],
+    "CFG_WEEK_START_OPTIONS": ["Mon", "Sun"],
+    "CFG_EDITION_OPTIONS": ["Calm", "Loud"],
+    "note": "Currency default ships BLANK/prompted on first open of Set up — buyer picks from a broad list on setup so nobody is excluded. Locale (EU 1.234,56/DD-MM-YYYY vs US 1,234.56/MM-DD-YYYY) is one dropdown, not a separate SKU."
+  },
+  "screens": [
+    { "n": 1, "name": "Set up", "phase": 1 },
+    { "n": 2, "name": "Accounts", "phase": 1 },
+    { "n": 3, "name": "Add spending", "phase": 2 },
+    { "n": 4, "name": "This month", "phase": 2, "default": true },
+    { "n": 5, "name": "Bills calendar", "phase": 2 },
+    { "n": 6, "name": "Year overview", "phase": 3 },
+    { "n": 7, "name": "Goals & savings", "phase": 3 },
+    { "n": 8, "name": "Debt", "phase": 3 },
+    { "n": 9, "name": "Net worth", "phase": 3 }
+  ],
+  "phaseLabels": [
+    "Once, at the start",
+    "Five minutes a week",
+    "Whenever you want the whole view"
+  ]
+}

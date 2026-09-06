@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Het Ritme Brand — Etsy Export Sizes</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 40px;
+      background: #f5f5f5;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: #333;
+    }
+    h1 { margin-top: 0; color: #262119; }
+    .section {
+      margin-bottom: 60px;
+    }
+    .section h2 {
+      font-size: 18px;
+      color: #666;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 10px;
+    }
+    .export-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+    .export-item {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    .export-item h3 {
+      margin: 0 0 10px 0;
+      font-size: 14px;
+      color: #666;
+    }
+    .canvas-container {
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px dashed #ddd;
+      border-radius: 4px;
+      margin-bottom: 15px;
+    }
+    .canvas-container.square-400 { width: 420px; height: 420px; }
+    .canvas-container.rect-600x300 { width: 620px; height: 320px; }
+    .canvas-container.rect-400x500 { width: 420px; height: 520px; }
+    .canvas-container.square-200 { width: 220px; height: 220px; }
+
+    canvas {
+      display: block;
+      max-width: 100%;
+      background: white;
+    }
+
+    .size-label {
+      font-size: 12px;
+      color: #999;
+      margin-top: 10px;
+    }
+
+    .instructions {
+      background: #e8f4f8;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 40px;
+      border-left: 4px solid #2196F3;
+    }
+    .instructions h2 { margin-top: 0; }
+    .instructions ol { margin: 0; padding-left: 20px; }
+    .instructions li { margin-bottom: 8px; }
+
+    code {
+      background: #f5f5f5;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-family: 'Courier New', monospace;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Het Ritme Brand — Etsy-Ready Exports</h1>
+
+<div class="instructions">
+  <h2>How to export each as PNG:</h2>
+  <ol>
+    <li>Right-click on any image below</li>
+    <li>Select <strong>"Save image as..."</strong></li>
+    <li>Keep the filename (it includes the dimensions)</li>
+    <li>Save as PNG format</li>
+  </ol>
+  <p><strong>Alternatively:</strong> Use <code>Right-click → Inspect → Right-click canvas → Save image as</code></p>
+</div>
+
+<!-- MARKS (400x400) -->
+<div class="section">
+  <h2>Square Brand Marks (400×400 px) — For shop icon, profile avatar</h2>
+  <div class="export-grid">
+    <div class="export-item">
+      <h3>Calm (Sage)</h3>
+      <div class="canvas-container square-400">
+        <canvas id="mark-calm" width="400" height="400"></canvas>
+      </div>
+      <div class="size-label">400 × 400 px</div>
+    </div>
+    <div class="export-item">
+      <h3>Loud (Coral)</h3>
+      <div class="canvas-container square-400">
+        <canvas id="mark-loud" width="400" height="400"></canvas>
+      </div>
+      <div class="size-label">400 × 400 px</div>
+    </div>
+    <div class="export-item">
+      <h3>Ink (Black)</h3>
+      <div class="canvas-container square-400">
+        <canvas id="mark-ink" width="400" height="400"></canvas>
+      </div>
+      <div class="size-label">400 × 400 px</div>
+    </div>
+    <div class="export-item">
+      <h3>Reversed (White on dark)</h3>
+      <div class="canvas-container square-400">
+        <canvas id="mark-reversed" width="400" height="400"></canvas>
+      </div>
+      <div class="size-label">400 × 400 px</div>
+    </div>
+  </div>
+</div>
+
+<!-- HORIZONTAL LOCKUPS (600x300) -->
+<div class="section">
+  <h2>Horizontal Lockups (600×300 px) — For banner, shop header</h2>
+  <div class="export-grid">
+    <div class="export-item">
+      <h3>Calm (Sage)</h3>
+      <div class="canvas-container rect-600x300">
+        <canvas id="lockup-h-calm" width="600" height="300"></canvas>
+      </div>
+      <div class="size-label">600 × 300 px</div>
+    </div>
+    <div class="export-item">
+      <h3>Loud (Coral)</h3>
+      <div class="canvas-container rect-600x300">
+        <canvas id="lockup-h-loud" width="600" height="300"></canvas>
+      </div>
+      <div class="size-label">600 × 300 px</div>
+    </div>
+    <div class="export-item">
+      <h3>Ink (Black)</h3>
+      <div class="canvas-container rect-600x300">
+        <canvas id="lockup-h-ink" width="600" height="300"></canvas>
+      </div>
+      <div class="size-label">600 × 300 px</div>
+    </div>
+    <div class="export-item">
+      <h3>Reversed (White on dark)</h3>
+      <div class="canvas-container rect-600x300">
+        <canvas id="lockup-h-reversed" width="600" height="300"></canvas>
+      </div>
+      <div class="size-label">600 × 300 px</div>
+    </div>
+  </div>
+</div>
+
+<!-- STACKED LOCKUPS (400x500) -->
+<div class="section">
+  <h2>Stacked Lockups (400×500 px) — For cover, thumbnail</h2>
+  <div class="export-grid">
+    <div class="export-item">
+      <h3>Calm (Sage)</h3>
+      <div class="canvas-container rect-400x500">
+        <canvas id="lockup-s-calm" width="400" height="500"></canvas>
+      </div>
+      <div class="size-label">400 × 500 px</div>
+    </div>
+    <div class="export-item">
+      <h3>Loud (Coral)</h3>
+      <div class="canvas-container rect-400x500">
+        <canvas id="lockup-s-loud" width="400" height="500"></canvas>
+      </div>
+      <div class="size-label">400 × 500 px</div>
+    </div>
+    <div class="export-item">
+      <h3>Ink (Black)</h3>
+      <div class="canvas-container rect-400x500">
+        <canvas id="lockup-s-ink" width="400" height="500"></canvas>
+      </div>
+      <div class="size-label">400 × 500 px</div>
+    </div>
+    <div class="export-item">
+      <h3>Reversed (White on dark)</h3>
+      <div class="canvas-container rect-400x500">
+        <canvas id="lockup-s-reversed" width="400" height="500"></canvas>
+      </div>
+      <div class="size-label">400 × 500 px</div>
+    </div>
+  </div>
+</div>
+
+<!-- FAVICON (200x200) -->
+<div class="section">
+  <h2>Favicon (200×200 px) — For browser tab</h2>
+  <div class="export-grid">
+    <div class="export-item">
+      <h3>Favicon</h3>
+      <div class="canvas-container square-200">
+        <canvas id="favicon" width="200" height="200"></canvas>
+      </div>
+      <div class="size-label">200 × 200 px</div>
+    </div>
+  </div>
+</div>
+
+<script>
+// SVG content and rendering function
+const svgs = {
+  'mark-calm': `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150" width="150" height="150"><circle cx="75" cy="75" r="50" fill="none" stroke="#262119" stroke-width="10"/><circle cx="75" cy="75" r="12.5" fill="#4A6250"/></svg>`,
+  'mark-loud': `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150" width="150" height="150"><circle cx="75" cy="75" r="50" fill="none" stroke="#262119" stroke-width="10"/><circle cx="75" cy="75" r="12.5" fill="#D65A34"/></svg>`,
+  'mark-ink': `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150" width="150" height="150"><circle cx="75" cy="75" r="50" fill="none" stroke="#262119" stroke-width="10"/><circle cx="75" cy="75" r="12.5" fill="#262119"/></svg>`,
+  'mark-reversed': `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150" width="150" height="150"><circle cx="75" cy="75" r="50" fill="none" stroke="#ffffff" stroke-width="10"/><circle cx="75" cy="75" r="12.5" fill="#ffffff"/></svg>`,
+  'lockup-h-calm': `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300" width="600" height="300"><text x="50" y="150" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#262119">Het Ritme</text><circle cx="150" cy="75" r="40" fill="none" stroke="#4A6250" stroke-width="8"/><circle cx="150" cy="75" r="10" fill="#4A6250"/></svg>`,
+  'lockup-h-loud': `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300" width="600" height="300"><text x="50" y="150" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#262119">Het Ritme</text><circle cx="150" cy="75" r="40" fill="none" stroke="#D65A34" stroke-width="8"/><circle cx="150" cy="75" r="10" fill="#D65A34"/></svg>`,
+  'lockup-h-ink': `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300" width="600" height="300"><text x="50" y="150" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#262119">Het Ritme</text><circle cx="150" cy="75" r="40" fill="none" stroke="#262119" stroke-width="8"/><circle cx="150" cy="75" r="10" fill="#262119"/></svg>`,
+  'lockup-h-reversed': `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300" width="600" height="300"><rect width="600" height="300" fill="#262119"/><text x="50" y="150" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#ffffff">Het Ritme</text><circle cx="150" cy="75" r="40" fill="none" stroke="#ffffff" stroke-width="8"/><circle cx="150" cy="75" r="10" fill="#ffffff"/></svg>`,
+  'lockup-s-calm': `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 250" width="200" height="250"><circle cx="100" cy="60" r="40" fill="none" stroke="#4A6250" stroke-width="8"/><circle cx="100" cy="60" r="10" fill="#4A6250"/><text x="100" y="150" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#262119" text-anchor="middle">Het</text><text x="100" y="180" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#262119" text-anchor="middle">Ritme</text></svg>`,
+  'lockup-s-loud': `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 250" width="200" height="250"><circle cx="100" cy="60" r="40" fill="none" stroke="#D65A34" stroke-width="8"/><circle cx="100" cy="60" r="10" fill="#D65A34"/><text x="100" y="150" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#262119" text-anchor="middle">Het</text><text x="100" y="180" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#262119" text-anchor="middle">Ritme</text></svg>`,
+  'lockup-s-ink': `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 250" width="200" height="250"><circle cx="100" cy="60" r="40" fill="none" stroke="#262119" stroke-width="8"/><circle cx="100" cy="60" r="10" fill="#262119"/><text x="100" y="150" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#262119" text-anchor="middle">Het</text><text x="100" y="180" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#262119" text-anchor="middle">Ritme</text></svg>`,
+  'lockup-s-reversed': `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 250" width="200" height="250"><rect width="200" height="250" fill="#262119"/><circle cx="100" cy="60" r="40" fill="none" stroke="#ffffff" stroke-width="8"/><circle cx="100" cy="60" r="10" fill="#ffffff"/><text x="100" y="150" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#ffffff" text-anchor="middle">Het</text><text x="100" y="180" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#ffffff" text-anchor="middle">Ritme</text></svg>`,
+  'favicon': `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150" width="150" height="150"><circle cx="75" cy="75" r="50" fill="none" stroke="#4A6250" stroke-width="10"/><circle cx="75" cy="75" r="12.5" fill="#4A6250"/></svg>`,
+};
+
+// Render each canvas
+for (const [canvasId, svgString] of Object.entries(svgs)) {
+  const canvas = document.getElementById(canvasId);
+  if (!canvas) continue;
+
+  const ctx = canvas.getContext('2d');
+  const img = new Image();
+
+  img.onload = function() {
+    ctx.fillStyle = 'white';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+  };
+
+  img.src = 'data:image/svg+xml;base64,' + btoa(svgString);
+}
+</script>
+
+</body>
+</html>
