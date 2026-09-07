@@ -30,15 +30,25 @@ debt free
 loan tracker
 savings tracker
 
-## Description — MISSING, needs writing
-Structural outline only (fill against BRAND.md Calm voice: plain, respectful, no exclamation marks, no emoji, behavioural-economics framing without jargon):
-1. One sentence naming the exact problem this solves
-2. Setup promise
-3. What you get (nine-screen list, Debt screen specifics: snowball/avalanche dual payoff dates shown before committing)
-4. Both formats included
-5. Any currency, any date format
-6. Cross-sell the Loud edition (Debt Crusher)
-7. Instant download, free lifetime updates, message me
+## Description
+
+Most debt payoff plans fail because they show one date, and you have no way to compare it. This planner shows both: snowball and avalanche strategies side by side, so you know what you are choosing before you commit.
+
+Set it up once in about four minutes: your debts, balances, interest rates, and minimum payments. After that, every payment you log recalculates your payoff date. Enter extra payments, and the file shows you exactly how many months that saved.
+
+**What you get**
+The same nine-screen system as Ritme's core budget planner, plus a dedicated Debt screen with snowball and avalanche payoff strategies shown in parallel. Your payoff date recalculates every time you enter a payment. Optional: set a monthly extra payment amount and watch the months disappear.
+
+**Both formats included**
+A spreadsheet for Excel, Google Sheets and Apple Numbers, with live formulas and protected cells. Plus a Notion version you duplicate into your own workspace — same logic, same calculations.
+
+**Any currency, any date format**
+One cell sets your symbol everywhere. European and US number and date formats both included. 
+
+**If you prefer celebration over quiet**
+The same planner exists as Debt Crusher, the Loud edition, with streaks and a celebration moment when a debt clears.
+
+Instant download. Free lifetime updates. Message me if anything is unclear — I answer every one.
 
 ## Hero image copy (confirmed, from artboard 3c)
 Headline: "Debt Buster"

@@ -2,25 +2,43 @@ Debt Crusher — Loud edition
 Source: RITME Etsy Listings.dc.html artboard 3c (hero copy) — title and description not in the handoff
 =========================================================================
 
-## ⚠ Status: partial — title and full description not yet written
-The design handoff never states a Loud-edition title for this product (SEO-AND-MARKETING.md only
-gives the Calm-toned "Debt Payoff Planner..." title). Per the brief's own rule ("if a string is
-missing, ask" — CLAUDE-CODE-PROMPT.md), no title or description is invented here. Ask the shop
-owner to confirm a Loud title (likely following the same formula as Dopamine Budget's: `<primary
-keyword> <format> — <edition/differentiator>, <platforms>`, fronting a searched phrase like "debt
-snowball" or "debt free" in the first 40 characters) before this listing can go live.
+## Title
+Debt Payoff Tracker Spreadsheet & Notion Template — Snowball Avalanche Payoff Calculator ADHD, Excel Google Sheets Numbers
 
 ## Thirteen tags
-Same Debt swap set as the Calm listing, since SEO-AND-MARKETING.md gives one Debt tag swap, not
-separate Calm/Loud sets: adhd planner, budget spreadsheet, notion budget, annual budget, google
-sheets, excel template, neurodivergent, debt snowball, money tracker, paycheck budget, debt free,
-loan tracker, savings tracker.
+adhd planner
+budget spreadsheet
+notion budget
+annual budget
+google sheets
+excel template
+neurodivergent
+debt snowball
+money tracker
+paycheck budget
+debt free
+loan tracker
+savings tracker
 
-## Description — MISSING, needs writing
-Outline against BRAND.md Loud voice (warm, funny, self-aware, never manic, max one exclamation mark
-per screen, no emoji in headings) once the owner confirms direction — same seven-part structure as
-the other Loud listing (dopamine-budget-loud.md), themed to debt payoff and the celebration-per-
-cleared-debt mechanic.
+## Description
+
+Paying off debt alone is boring. Paying off debt and actually seeing the date move? That is motivation.
+
+This planner shows you both payoff strategies (snowball and avalanche) at the same time. Enter an extra payment and watch your freedom date get closer. Clear a debt, and the file celebrates with you. Enter the next one. Repeat until you own your life.
+
+**What you get**
+The same nine-screen budget system with a dedicated Debt screen. Your payoff date recalculates every time you log a payment. Snowball and avalanche strategies show their payoff dates side by side. Optional: set an extra monthly payment amount and watch the months shrink. Each debt that clears gets a celebration moment.
+
+**Both formats included**
+A spreadsheet for Excel, Google Sheets and Apple Numbers, with live formulas and protected cells. Plus a Notion version you duplicate into your own workspace — same celebration moments, same calculations.
+
+**Any currency, any date format**
+One cell sets your symbol everywhere. European and US number and date formats both included.
+
+**If quiet is more your speed**
+The same planner exists as Debt Buster, the Calm edition, with the same payoff dates and none of the fuss.
+
+Instant download. Free lifetime updates. Message me if anything is unclear — I answer every one.
 
 ## Hero image copy (confirmed, from artboard 3c)
 Headline: "Debt Crusher"

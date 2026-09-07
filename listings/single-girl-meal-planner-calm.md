@@ -32,15 +32,25 @@ budget-line tag set and may not be the strongest fits for a meal planner — fla
 whether they'd rather swap these for more meal-specific search terms (e.g. "weekly meal plan",
 "family dinner planner") once real Etsy search-volume data is available for this category.
 
-## Description — MISSING, needs writing
-Structural outline only (fill against BRAND.md Calm voice):
-1. One sentence naming the problem ("nobody wants to plan seven dinners")
-2. Setup promise
-3. What you get (four-nights-not-seven structure, self-building shopping list)
-4. Both formats included
-5. Any currency (if relevant — this product may not need currency at all; confirm scope with owner)
-6. Cross-sell the Loud edition
-7. Instant download, free lifetime updates, message me
+## Description
+
+Most meal plans assume you will cook seven nights a week. Cooking for one means you will not, and that is fine.
+
+Plan four nights. The other three? Leftovers on purpose, a restaurant trip, or whatever happens. The shopping list builds itself from what you planned, nothing more. No waste, no surplus ingredients staring at you from the fridge.
+
+**What you get**
+A weekly meal planner sized for one. Four dinner slots, with a notes field for each (leftovers, going out, takeout, order in — whatever). The shopping list updates itself automatically from your four choices. A Notion version lets you duplicate it into your own workspace and build your recipe library over time.
+
+**Both formats included**
+A spreadsheet for Excel, Google Sheets and Apple Numbers. Plus a Notion version you duplicate into your own workspace.
+
+**Built for people who actually live alone**
+The tone assumes four nights is reasonable and three nights off is a feature, not a shortcoming. No judgment about takeout. No assumption that cooking is a hobby.
+
+**If you want celebration with your planning**
+The same planner exists as Meal Planner Play, the Loud edition, with streaks and a celebration moment each time you finish a week.
+
+Instant download. Free lifetime updates. Message me if anything is unclear — I answer every one.
 
 ## Hero image copy (confirmed, from artboard 3c)
 Headline: "Meal planning for one"
