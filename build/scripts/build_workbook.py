@@ -24,9 +24,9 @@ from openpyxl.utils import get_column_letter
 from openpyxl.workbook.defined_name import DefinedName
 from openpyxl.worksheet.page import PageMargins
 
-REPO_ROOT = "/home/claude/repo"
+REPO_ROOT = "/Users/simonedupreez/Desktop/het-ritme"
 TOKENS_PATH = os.path.join(REPO_ROOT, "design-tokens.json")
-OUT_DIR = os.path.join(REPO_ROOT, "build")
+OUT_DIR = "/Users/simonedupreez/Desktop/het-ritme"
 
 with open(TOKENS_PATH) as f:
     TOKENS = json.load(f)
